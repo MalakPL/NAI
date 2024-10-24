@@ -16,7 +16,6 @@ Instrukcja przygotowania środowiska:
 
 
 import heapq
-import random
 
 class Node:
     def __init__(self, state, cost, priority, parent=None):
@@ -133,6 +132,7 @@ class NimGame:
         heapq.heappush(pq, initial_node)
 
         best_node = None
+        last_node = None
         best_f_score = float('inf')
 
         while pq:
@@ -149,6 +149,8 @@ class NimGame:
                 if f_score < best_f_score:
                     best_f_score = f_score
                     best_node = new_node
+
+                last_node = new_node
                 
                 heapq.heappush(pq, new_node)
 
@@ -166,9 +168,9 @@ class NimGame:
             best_move = path[1]
             self.piles = best_move
             return True
-        
+
         # FIX
-        self.piles = random.choice(successors)
+        self.piles = last_node.state
         
         return False
 
