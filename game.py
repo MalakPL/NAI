@@ -16,6 +16,7 @@ Instrukcja przygotowania środowiska:
 
 
 import heapq
+import random
 
 class Node:
     def __init__(self, state, cost, priority, parent=None):
@@ -166,6 +167,9 @@ class NimGame:
             self.piles = best_move
             return True
         
+        # FIX
+        self.piles = random.choice(successors)
+        
         return False
 
     def switch_player(self):
@@ -174,7 +178,7 @@ class NimGame:
 
 
 if __name__ == "__main__":
-    game = NimGame(piles=[3, 5, 2])
+    game = NimGame(piles=[4, 3, 5])
 
     while not game.is_game_over():
         game.display_piles()
