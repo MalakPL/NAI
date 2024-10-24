@@ -174,7 +174,7 @@ class NimGame:
 
 
 if __name__ == "__main__":
-    game = NimGame(piles=[3, 4, 5])
+    game = NimGame(piles=[7, 6, 3])
 
     while not game.is_game_over():
         game.display_piles()
