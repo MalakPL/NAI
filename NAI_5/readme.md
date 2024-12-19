@@ -26,6 +26,7 @@ pip install tensorflow scikit-learn matplotlib seaborn
 ![GradCAM](ss.png)
 
 ### Raport przykładowej klasyfikacji
+```bash
               precision    recall  f1-score   support
 
     airplane       0.86      0.83      0.85      1000
@@ -42,3 +43,4 @@ pip install tensorflow scikit-learn matplotlib seaborn
     accuracy                           0.84     10000
    macro avg       0.84      0.84      0.84     10000
 weighted avg       0.84      0.84      0.84     10000
+```
